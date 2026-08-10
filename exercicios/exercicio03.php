@@ -1,31 +1,31 @@
 <?php
-    // Regras de negócio
+// Regras de negócio
 
-    // Idade definida
-    $idade = 50;
+// Idade definida
+$idade = 50;
 
 $categoria = '';
 $classeCss = '';
 $valorIngresso = 0.0;
 
-    // Estrutura condicional
-    if ($idade < 12) {
+// Estrutura condicional
+if ($idade < 12) {
     $categoria = 'Infantil';
     $classeCss = 'ingresso--infantil';
     $valorIngresso = 25.00;
 } elseif ($idade < 60) {
-    $categoria = 'Adulto'; 
+    $categoria = 'Adulto';
     $classeCss = 'ingresso--adulto';
     $valorIngresso = 40.00;
 } else {
-    $categoria = 'Melhor Idade'; 
+    $categoria = 'Melhor Idade';
     $classeCss = 'ingresso--melhor-idade';
     $valorIngresso = 20.00;
 }
 
-    // Formatação da moeda
-    // Função auxiliar para formatação com separador de milhar e decimais 
-    function formatarMoeda(float $valor): string
+// Formatação da moeda
+// Função auxiliar para formatação com separador de milhar e decimais 
+function formatarMoeda(float $valor): string
 {
     return 'R$ ' . number_format($valor, 2, ',', '.');
 }
@@ -50,7 +50,8 @@ $valorFormatado = formatarMoeda($valorIngresso);
             font-family: var(--font-sans);
             background-color: #f4f6f9;
             display: flex;
-            flex-direction: column; /* Alterado para empilhar o título e o cartão */
+            flex-direction: column;
+            /* Alterado para empilhar o título e o cartão */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -149,7 +150,7 @@ $valorFormatado = formatarMoeda($valorIngresso);
 
 <body>
     <!-- Veja: usamos PHP para definir a classe -->
-<!-- O título agora coexiste corretamente com o ingresso usando flex-direction: column no body -->
+    <!-- O título agora coexiste corretamente com o ingresso usando flex-direction: column no body -->
     <h1 class="titulo-pagina">Sistema de Bilheteria</h1>
 
     <main class="ingresso-container">
@@ -166,7 +167,7 @@ $valorFormatado = formatarMoeda($valorIngresso);
 
             <div class="ingresso__linha">
                 <span>Categoria:</span>
-                
+
                 <!-- A condicional agora funcionará corretamente devido ao Casing exato -->
                 <?php if ($categoria === 'Melhor Idade'): ?>
                     <strong style="text-transform: uppercase;">⭐ <?= $categoria ?></strong>
