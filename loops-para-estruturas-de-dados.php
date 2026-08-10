@@ -27,6 +27,20 @@ $meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"];
     ];
 ?>
 
+<?php
+    $clientes = [
+        [
+            "nome" => "Bergkamp",
+            "email" => "bergunner@netherlard.com"
+        ],
+        [
+            "nome" => "Batistuta",
+            "email" => "batigol@fiorintendo.com"
+        ]
+    ];
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -112,7 +126,18 @@ $meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"];
                         endforeach;
                     endforeach;                
                 ?>
+                    <hr><br>
+                    <h2>Usando <code>foreach</code> em uma matriz associativa</h2>
+                <?php 
+                    foreach ($clientes as $cliente):                    
+                ?>
 
+                        <p><b>Nome:</b> <span class="bg-primary-subtle p-1"><?=$cliente["nome"]?></span></p>
+                        <p><b>Email:</b> <span class="bg-primary-subtle p-1"><?=$cliente["email"]?></span></p>
+
+                <?php 
+                    endforeach;
+                ?>
         
 
     </div>
