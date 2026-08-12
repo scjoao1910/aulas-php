@@ -79,6 +79,45 @@
         <p>Número 10 <?= verificarNegativo(10) ?></p>
         <p>Número 10 <?= verificarNegativo(-10) ?></p>
         <!-- <p>Teste para erro: < ?= verificarNegativo("teste") ?></p> -->
+
+        <hr>
+
+        <h2>Função anônima (ou lambda)</h2>
+        <?php // SEMPRE declare primeiro a função
+            $multiplicar = function (float $valor1, float $valor2):float{
+                return $valor1 * $valor2;
+            }
+        ?>
+
+        <p>Exemplo: <?= $multiplicar(10,2) ?></p>
+
+        <hr>
+
+        <h2>Arrow function</h2>
+
+        <?php 
+            $subtrair = fn(float $valor1, float $valor2):float => $valor1 - $valor2;        
+        ?>
+        <p>Exemplo: <?= $subtrair(10,1) ?></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
         
 
