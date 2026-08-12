@@ -29,8 +29,6 @@ $linguagensDeProgramacao = [
 ?>
 
 
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -43,20 +41,33 @@ $linguagensDeProgramacao = [
 </head>
 
 <body>
-
-
-    <?php
-    foreach ($linguagensDeProgramacao as $linguagens):
-    ?>
-        <ul>
-        <li>ID <?=$linguagens["id"]?>
-            linguagem <?=$linguagens["linguagem"] ?>
-            Descrição <?=$linguagens["descricao"] ?>
-    <?php
-    endforeach;
-    ?>
-    
-
+    <h2 class="display-2 text-center p-2">Linguagens de programação</h2>
+  
+    <div class="container">
+        <table class="table table-bordered table-striped table-info table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Linguagem</th>
+                    <th scope="col">Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Regra de negócio -->
+                <?php
+                foreach ($linguagensDeProgramacao as $linguagens):
+                ?>
+                    <tr>
+                        <td><?= $linguagens["id"] ?></td>
+                        <td><?= $linguagens["linguagem"] ?></td>
+                        <td><?= $linguagens["descricao"] ?></td>
+                    </tr>
+                <?php
+                endforeach;
+                ?>
+            </tbody>
+        </table>
+    </div>
 
 
 
