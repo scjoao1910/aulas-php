@@ -17,14 +17,18 @@ Arrays superglobais que possuem os dados
 enviados a partir de formulários e/ou
 links dinâmicos. */
 
+// Lista de possíveis erros econtrados ao longo do processamento
+$erros = []; 
+
+
 // Verificando se houve uma requisição POST
 if( $_SERVER["REQUEST_METHOD"] === "POST" ){
 
     // Capturando os dados de cada campo
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $idade = $_POST["idade"];
-    $mensagem = $_POST["mensagem"];
+    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_NUMBER_INT);
+    $mensagem = filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_SPECIAL_CHARS);
 
     /* Operador ?? -> coalescência nula
     Caso nenhum interesse seja selecionado, 
