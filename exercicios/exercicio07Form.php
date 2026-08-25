@@ -24,10 +24,10 @@
             <label class="form-label" for="fabricante">Fabricante:</label>
             <select name="fabricante" id="fabricante" class="form-select">
                 <option value="" selected disabled></option>
-                <option value="dell">Dell</option>
+                <option value="dell">Sony</option>
                 <option value="microsoft">Microsoft</option>
-                <option value="motorola">Motorola</option>
-                <option value="lg">LG</option>
+                <option value="motorola">Nintendo</option>
+                <option value="lg">Asus</option>
             </select>
         </div>
 
